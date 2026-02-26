@@ -14,6 +14,7 @@
 
 * {
   box-sizing: border-box;
+   transition: background-color 0.3s ease, color 0.3s ease;
 }
 html {
   scroll-behavior: smooth;
@@ -31,18 +32,35 @@ body {
   background:
     radial-gradient(
       1200px 800px at 12% 15%,
-      rgba(69, 215, 235, 0.705),
+      rgba(49, 198, 218, 0.705),
       transparent 55%
     ),
     radial-gradient(
       1000px 700px at 88% 25%,
-      rgba(32, 231, 98, 0.76),
+      rgba(132, 138, 134, 0.76),
       transparent 60%
     ),
     var(--bg);
   color: var(--text);
 }
 
+/* Toggle button */
+.theme-toggle {
+  margin-left: 12px;
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+
+}
+[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #111111;
+  --surface: #f3f4f6;
+  --muted: #555555;
+  --line: #d1d5db;
+}
 img {
   max-width: 100%;
   display: block;
@@ -461,6 +479,7 @@ p {
   padding: 0;
   overflow: hidden;
 }
+
 .project-img img {
   width: 100%;
   height: 220px;
@@ -499,15 +518,18 @@ p {
   align-items: flex-start;
   padding: 10px 0;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.86);
+  color: var(--text);
 }
 .contact-note {
   margin-top: 14px;
   padding: 12px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.86);
+  /* background: rgba(255, 255, 255, 0.05); */
+  /* border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.86); */
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
 }
 .contact-note code {
   background: rgba(0, 0, 0, 0.35);
@@ -530,12 +552,15 @@ form span {
 input,
 textarea {
   width: 100%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  /* background: rgba(255, 255, 255, 0.06); */
+  /* border: 1px solid rgba(255, 255, 255, 0.14); */
   border-radius: 14px;
   padding: 12px 12px;
   color: var(--text);
   outline: none;
+  background: var(--surface);
+  
+  border: 1px solid var(--line);
 }
 input:focus,
 textarea:focus {
@@ -680,4 +705,144 @@ textarea:focus {
   .form-row {
     grid-template-columns: 1fr;
   }
+}
+/* ===============================
+   LIGHT THEME VISIBILITY FIXES
+   =============================== */
+
+[data-theme="light"] {
+  --muted: #4b5563;
+  --line: #e5e7eb;
+}
+
+/* Background gradients (softer) */
+[data-theme="light"] body {
+  background:
+    radial-gradient(
+      1200px 800px at 12% 15%,
+      rgba(49, 198, 218, 0.15),
+      transparent 55%
+    ),
+    radial-gradient(
+      1000px 700px at 88% 25%,
+      rgba(132, 138, 134, 0.15),
+      transparent 60%
+    ),
+    var(--bg);
+}
+
+/* Header */
+[data-theme="light"] .header {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Navbar */
+[data-theme="light"] .nav-link {
+  color: var(--muted);
+}
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-link.active {
+  color: var(--text);
+  background: var(--surface);
+}
+[data-theme="light"] .nav-cta {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+/* Cards */
+[data-theme="light"] .card,
+[data-theme="light"] .profile-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  backdrop-filter: none;
+}
+
+/* Hero section text */
+[data-theme="light"] .hero-role {
+  color: var(--muted);
+}
+[data-theme="light"] .social-link {
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--line);
+}
+
+/* Stats */
+[data-theme="light"] .stat {
+  background: var(--surface);
+  border-color: var(--line);
+}
+[data-theme="light"] .stat-num {
+  color: var(--text);
+}
+
+/* Lists & details */
+[data-theme="light"] .details li {
+  color: var(--text);
+  border-bottom-color: var(--line);
+}
+
+/* Skills */
+[data-theme="light"] .skill-top {
+  color: var(--text);
+}
+[data-theme="light"] .bar {
+  background: #e5e7eb;
+  border-color: var(--line);
+}
+
+/* Chips */
+[data-theme="light"] .chip {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--line);
+}
+
+/* Forms */
+[data-theme="light"] input,
+[data-theme="light"] textarea {
+  background: #ffffff;
+  color: var(--text);
+  border-color: var(--line);
+}
+
+/* Footer */
+[data-theme="light"] .footer {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+/* ===============================
+   SCROLL REVEAL (CSS ONLY)
+   =============================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: revealAnimation linear forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 40%;
+}
+
+@keyframes revealAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
 }

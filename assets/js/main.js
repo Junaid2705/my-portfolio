@@ -1,6 +1,6 @@
-/* Main JS for portfolio starter */
 
-(function () {
+(function () 
+{
   const header = document.querySelector(".header");
   const navToggle = document.getElementById("navToggle");
   const navMenu = document.getElementById("navMenu");
@@ -75,30 +75,52 @@
     });
   }
 
-  // Skills animation (IntersectionObserver)
-  const fills = document.querySelectorAll(".fill[data-fill]");
-  const skillsSection = document.querySelector("#skills");
+  // // Skills animation (IntersectionObserver)
+  // const fills = document.querySelectorAll(".fill[data-fill]");
+  // const skillsSection = document.querySelector("#skills");
 
-  if (skillsSection && fills.length) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
+  // if (skillsSection && fills.length) {
+  //   const io = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (!entry.isIntersecting) return;
 
-          fills.forEach((el) => {
-            const v = Number(el.dataset.fill || 0);
-            el.style.width = Math.max(0, Math.min(100, v)) + "%";
-          });
+  //         fills.forEach((el) => {
+  //           const v = Number(el.dataset.fill || 0);
+  //           el.style.width = Math.max(0, Math.min(100, v)) + "%";
+  //         });
 
-          io.disconnect();
-        });
-      },
-      { threshold: 0.25 }
-    );
+  //         io.disconnect();
+  //       });
+  //     },
+  //     { threshold: 0.25 }
+  //   );
 
-    io.observe(skillsSection);
-  }
+  //   io.observe(skillsSection);
+  // }
+// Skills animation (IntersectionObserver)
+const fills = document.querySelectorAll(".fill[data-fill]");
 
+if (fills.length) {
+  const skillObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const bar = entry.target;
+        const value = bar.getAttribute("data-fill");
+        bar.style.width = value + "%";
+
+        observer.unobserve(bar);
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  fills.forEach((fill) => {
+    skillObserver.observe(fill);
+  });
+}
   // Project filtering
   const chips = document.querySelectorAll(".chip[data-filter]");
   const projects = document.querySelectorAll(".project[data-cat]");
@@ -135,3 +157,75 @@
 })();
 
 
+  
+  document.addEventListener("DOMContentLoaded", function () {
+  const themeToggle = document.getElementById("themeToggle");
+
+  if (!themeToggle) {
+    console.error("Theme toggle button not found");
+    return;
+  }
+
+  // Load saved theme or default
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  document.documentElement.setAttribute("data-theme", savedTheme);
+  themeToggle.textContent = savedTheme === "light" ? "🌙" : "🌑";
+
+  themeToggle.addEventListener("click", function () {
+    const currentTheme =
+      document.documentElement.getAttribute("data-theme");
+
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    themeToggle.textContent = newTheme === "light" ? "🌙" : "🌑";
+  });
+});
+
+// Scroll Reveal using JS
+const revealElements = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+
+  revealElements.forEach((el) => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+}
+
+// Run on scroll
+window.addEventListener("scroll", revealOnScroll);
+
+// Run once on page load
+revealOnScroll();
+
+// const modal = document.getElementById("projectModal");
+// const modalTitle = document.getElementById("modalTitle");
+// const modalDesc = document.getElementById("modalDesc");
+// const modalLive = document.getElementById("modalLive");
+// const modalGithub = document.getElementById("modalGithub");
+// const closeModal = document.getElementById("closeModal");
+
+// document.querySelectorAll(".open-modal").forEach(btn => {
+//   btn.addEventListener("click", () => {
+//     modalTitle.textContent = btn.dataset.title;
+//     modalDesc.textContent = btn.dataset.desc;
+//     modalLive.href = btn.dataset.live;
+//     modalGithub.href = btn.dataset.github;
+
+//     modal.classList.add("show");
+//   });
+// });
+
+// closeModal.addEventListener("click", () => {
+//   modal.classList.remove("show");
+// });
+
+// modal.addEventListener("click", e => {
+//   if (e.target === modal) modal.classList.remove("show");
+// });
