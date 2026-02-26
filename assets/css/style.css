@@ -5,8 +5,8 @@
   --text: rgba(255, 255, 255, 0.92);
   --muted: rgba(255, 255, 255, 0.68);
   --line: rgba(255, 255, 255, 0.12);
-  --brand: #7c5cff;
-  --brand-2: #35d0ff;
+  --brand: #7cf3f3;
+  --brand-2: #d49999;
 
   --radius: 18px;
   --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
@@ -31,12 +31,12 @@ body {
   background:
     radial-gradient(
       1200px 800px at 12% 15%,
-      rgba(231, 175, 149, 0.22),
+      rgba(69, 215, 235, 0.705),
       transparent 55%
     ),
     radial-gradient(
       1000px 700px at 88% 25%,
-      rgba(107, 200, 231, 0.2),
+      rgba(32, 231, 98, 0.76),
       transparent 60%
     ),
     var(--bg);
