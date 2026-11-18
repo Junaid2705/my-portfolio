@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build output
+dist/
+build/
+.output/
+
+# Cache & Environment
+.vite/
+.cache/
+*.log
+.DS_Store
+Thumbs.db
