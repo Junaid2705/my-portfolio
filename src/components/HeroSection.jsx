@@ -40,13 +40,13 @@ export default function HeroSection({ personal }) {
           </div>
 
           <h1 className="hero-title">
-            Hi, I’m <span className="gradient-text">{personal.name}</span>
+            Hi, I’m {personal.name}
           </h1>
           <h2 className="hero-role">{personal.role}</h2>
           <p className="hero-desc">{personal.tagline}</p>
 
           <div className="hero-actions">
-            <a className="btn btn-primary" href="#projects">
+            <a className="btn btn-solid" href="#projects">
               <span>View Projects</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -87,7 +87,6 @@ export default function HeroSection({ personal }) {
 
         <div className="hero-right">
           <div className="profile-frame">
-            <div className="profile-glow" aria-hidden="true" />
             <div className="profile-card">
               <img
                 className="profile-img"

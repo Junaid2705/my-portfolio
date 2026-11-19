@@ -42,7 +42,7 @@ export default function About({ about }) {
                 </li>
               ))}
             </ul>
-            <a className="btn btn-primary btn-block" href="#contact">
+            <a className="btn btn-solid w-100" href="#contact">
               <span>Get in Touch</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="5" y1="12" x2="19" y2="12" />

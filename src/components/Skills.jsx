@@ -47,7 +47,7 @@ export default function Skills({ skills }) {
           {skills.categories.map((cat) => (
             <div key={cat.id} className="skill-category card">
               <div className="category-header">
-                <div className={`category-icon category-icon-${cat.iconType}`}>
+                <div className="category-icon">
                   {renderCategoryIcon(cat.iconType)}
                 </div>
                 <div>
@@ -56,12 +56,11 @@ export default function Skills({ skills }) {
                 </div>
               </div>
 
-              {/* Clean flexbox of skill chips (NO levels or progress bars) */}
+              {/* Minimal flat pills (Swiss design, NO levels or colorful dots) */}
               <div className="skills-chip-wrap">
                 {cat.skills.map((skillName, idx) => (
                   <span key={idx} className="skill-chip">
-                    <span className="chip-dot" aria-hidden="true" />
-                    <span className="chip-label">{skillName}</span>
+                    {skillName}
                   </span>
                 ))}
               </div>

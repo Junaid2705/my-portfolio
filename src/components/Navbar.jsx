@@ -80,7 +80,7 @@ export default function Navbar({ personal, navigation, activeSection }) {
                 {link.label}
               </a>
             ))}
-            <a className="btn btn-sm btn-primary nav-cta" href="#contact">
+            <a className="btn btn-sm btn-solid nav-cta" href="#contact">
               Hire Me
             </a>
           </nav>
@@ -163,7 +163,7 @@ export default function Navbar({ personal, navigation, activeSection }) {
                 {link.label}
               </a>
             ))}
-            <a className="btn btn-primary nav-cta" href="#contact" onClick={closeNav}>
+            <a className="btn btn-solid nav-cta" href="#contact" onClick={closeNav}>
               Hire Me
             </a>
           </nav>

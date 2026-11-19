@@ -252,7 +252,7 @@ export default function Contact({ contact }) {
 
                 <button
                   type="submit"
-                  className="btn btn-primary w-100 py-3"
+                  className="btn btn-solid w-100 py-3"
                   disabled={status.submitting}
                 >
                   {status.submitting ? 'Sending Message...' : 'Send Message'}

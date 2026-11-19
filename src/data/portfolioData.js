@@ -211,7 +211,7 @@ export const portfolioData = {
         organization: "[Company Name] • Pune, India",
         period: "2024 – Present",
         badge: "Internship",
-        badgeClass: "badge-primary",
+        badgeClass: "badge-subtle",
         bullets: [
           "Engineered modular backend services using Core Java and structured relational queries with MySQL.",
           "Collaborated on building clean, mobile-responsive web interfaces utilizing semantic HTML, modern CSS, and JavaScript.",
@@ -223,7 +223,7 @@ export const portfolioData = {
         organization: "Self-Directed Engineering",
         period: "2023 – 2024",
         badge: "Independent Engineering",
-        badgeClass: "badge-secondary",
+        badgeClass: "badge-subtle",
         bullets: [
           "Built deep learning video analysis pipelines using YOLOv8, handling custom data preprocessing and model inference.",
           "Architected modular Java enterprise patterns (DAO, MVC, Service layers) with Maven dependencies and unit verification.",
@@ -237,7 +237,7 @@ export const portfolioData = {
         period: "2020 – 2024",
         grade: "CGPA: 7.20 / 10.0",
         badge: "Bachelor's Degree",
-        badgeClass: "badge-accent",
+        badgeClass: "badge-subtle",
         description: "Curriculum focused on Object-Oriented Programming, Database Management Systems, Data Structures & Algorithms, Computer Networks, and Software Engineering methodologies.",
       },
       {
@@ -246,7 +246,7 @@ export const portfolioData = {
         period: "2018 – 2020",
         grade: "Score: 76.45%",
         badge: "Higher Secondary",
-        badgeClass: "badge-default",
+        badgeClass: "badge-subtle",
         description: "Comprehensive focus in Mathematics, Physics, Chemistry, and Information Technology.",
       },
       {
@@ -255,7 +255,7 @@ export const portfolioData = {
         period: "Passed 2018",
         grade: "Score: 86.60%",
         badge: "Secondary",
-        badgeClass: "badge-default",
+        badgeClass: "badge-subtle",
         description: "",
       },
     ],
