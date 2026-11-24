@@ -116,7 +116,7 @@ export default function Contact({ contact }) {
                   </div>
                   <div>
                     <div className="text-muted small">Email</div>
-                    <div className="font-weight-bold contact-channel-val">junaidp2705@gmail.com</div>
+                    <div className="font-weight-bold contact-channel-val">junaidpathana@gmail.com</div>
                   </div>
                 </a>
 

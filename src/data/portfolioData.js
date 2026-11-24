@@ -5,10 +5,6 @@
  */
 
 import photoImg from '../assets/img/Photo.jpeg';
-import helmetImg from '../assets/img/close-up-motorcycle-with-helmet.jpg';
-import cartImg from '../assets/img/box-market-electronic-ordering-shop-basket.jpg';
-import houseImg from '../assets/img/10099.jpg';
-import calcImg from '../assets/img/recha-oktaviani-h2aDKwigQeA-unsplash.jpg';
 import resumePdf from '../assets/cv/Junaid_Pathan.pdf';
 
 export const portfolioData = {
@@ -21,7 +17,7 @@ export const portfolioData = {
     role: "Full Stack Developer & Software Engineer",
     statusText: "Available for Full-time Roles & Projects",
     location: "Pune, Maharashtra, India",
-    email: "junaidp2705@gmail.com",
+    email: "junaidpathana@gmail.com",
     phone: "+91 7057735633",
     resumeUrl: resumePdf,
     photoUrl: photoImg,
@@ -39,7 +35,7 @@ export const portfolioData = {
       },
       {
         platform: "Email",
-        url: "mailto:junaidp2705@gmail.com",
+        url: "mailto:junaidpathana@gmail.com",
         ariaLabel: "Direct Email",
       },
     ],
@@ -89,7 +85,7 @@ export const portfolioData = {
         subtitle: "Designing responsive, accessible, and intuitive interfaces",
         iconType: "fe",
         skills: [
-          "React.js",
+
           "JavaScript (ES6+)",
           "HTML5 / Semantic Web",
           "CSS3 / Flexbox & Grid",
@@ -137,65 +133,72 @@ export const portfolioData = {
   // Projects Showcase
   projects: {
     sectionTag: "Featured Work",
-    title: "Projects",
-    subtitle: "Selected projects highlighting backend logic, machine learning integration, and clean frontend engineering.",
-    categories: ["All", "Computer Vision", "Enterprise Java", "Machine Learning", "Frontend"],
+    title: "Featured Projects",
+    subtitle: "A showcase of full-stack web platforms, distributed architectures, machine learning models, and interactive applications.",
     items: [
+      {
+        id: "resolvia",
+        title: "Resolvia — Customer Query Management System",
+        description: "Built a full-stack web application to handle customer complaints from ticket creation to final resolution. Implemented secure login with JWT authentication across 4 user roles (Customer, Supervisor, Field Executive, Manager) with task assignment, status updates, and location tracking for field visits.",
+        techStack: ["React", "Spring Boot", "MySQL", "JWT"],
+        githubUrl: "https://github.com/Junaid2705/CQM",
+        link: "https://github.com/Junaid2705/CQM",
+        linkLabel: "View on GitHub",
+      },
+      {
+        id: "digital-mv",
+        title: "Digital MV — Customer Service & Field Operations Management System",
+        description: "Developed a full-lifecycle enterprise service management platform featuring role-based workflows for public incident intake, engineer dispatch, and compliance audits. Currently engineering a robust backend REST API and database architecture for real-time synchronization, secure authentication, and persistent data storage.",
+        techStack: ["React", "TypeScript", "Bootstrap", "REST API"],
+        githubUrl: "https://github.com/Junaid2705/Digital_MV",
+        link: "https://github.com/Junaid2705/Digital_MV",
+        linkLabel: "View on GitHub",
+      },
+      {
+        id: "taskora",
+        title: "Taskora — Freelancer Social Networking Platform",
+        description: "Built a full-stack freelancing and social networking web app where freelancers, employers, and creators can connect, post jobs, bid on projects, and share portfolios. Added secure role-based login (JWT), real-time chat and notifications using WebSockets, creator subscriptions, and an admin panel backed by a MySQL database.",
+        techStack: ["Java", "Spring Boot", "React", "MySQL", "WebSocket", "JWT"],
+        githubUrl: "https://github.com/Junaid2705/Taskora_Project",
+        link: "https://github.com/Junaid2705/Taskora_Project",
+        linkLabel: "View on GitHub",
+      },
       {
         id: "helmet-detection",
         title: "Automatic Helmet Detection System",
-        category: "Computer Vision",
-        categoryTag: "Computer Vision / Deep Learning",
         description: "Engineered a real-time computer vision system using YOLOv8 trained to detect motorcyclists and classify helmet compliance in streaming video feeds, aimed at bolstering road safety and automated traffic rule monitoring.",
-        image: helmetImg,
         techStack: ["Python", "YOLOv8", "OpenCV", "Google Colab"],
-        links: {
-          code: "https://drive.google.com/drive/folders/1GmFEbPY7Bd4DFh_Fe1x8OV7Arij21UrC?usp=drive_link",
-          codeLabel: "View Project",
-          isExternalDrive: true,
-        },
+        githubUrl: "https://drive.google.com/drive/folders/1GmFEbPY7Bd4DFh_Fe1x8OV7Arij21UrC?usp=drive_link",
+        link: "https://drive.google.com/drive/folders/1GmFEbPY7Bd4DFh_Fe1x8OV7Arij21UrC?usp=drive_link",
+        linkLabel: "View Project",
+        isExternalDrive: true,
       },
       {
         id: "ecommerce-cart",
         title: "E-Commerce Cart Management System",
-        category: "Enterprise Java",
-        categoryTag: "Enterprise Java / Backend",
         description: "Constructed an object-oriented shopping cart application handling persistent order workflows, inventory tracking, and item management with JDBC transactional operations and structured Log4j runtime logging.",
-        image: cartImg,
         techStack: ["Core Java", "MySQL", "JDBC", "Maven", "Log4j"],
-        links: {
-          code: "https://github.com/Junaid2705/E_Commerce_Cart.git",
-          codeLabel: "View Repository",
-          isExternalDrive: false,
-        },
+        githubUrl: "https://github.com/Junaid2705/E_Commerce_Cart.git",
+        link: "https://github.com/Junaid2705/E_Commerce_Cart.git",
+        linkLabel: "View Repository",
       },
       {
         id: "house-price-prediction",
         title: "Real Estate Price Prediction Engine",
-        category: "Machine Learning",
-        categoryTag: "Machine Learning & Java",
         description: "Implemented an analytical predictive system using linear regression algorithms in Java to compute property price estimations based on square footage, spatial attributes, and historical market datasets stored in MySQL.",
-        image: houseImg,
         techStack: ["Java", "Linear Regression", "MySQL", "Maven"],
-        links: {
-          code: "https://github.com/Junaid2705/HousePricePredictionProject.git",
-          codeLabel: "View Repository",
-          isExternalDrive: false,
-        },
+        githubUrl: "https://github.com/Junaid2705/HousePricePredictionProject.git",
+        link: "https://github.com/Junaid2705/HousePricePredictionProject.git",
+        linkLabel: "View Repository",
       },
       {
         id: "interactive-calculator",
         title: "Interactive Web Calculator",
-        category: "Frontend",
-        categoryTag: "Frontend Application",
         description: "Designed and coded an intuitive, responsive web calculator utilizing Vanilla JavaScript. Features dynamic expression evaluation, keyboard shortcut binding, edge-case arithmetic handling, and fluid responsive styling.",
-        image: calcImg,
         techStack: ["JavaScript", "CSS3", "HTML5", "DOM APIs"],
-        links: {
-          code: "https://github.com/Junaid2705/Calculator-Using-JS.git",
-          codeLabel: "View Repository",
-          isExternalDrive: false,
-        },
+        githubUrl: "https://github.com/Junaid2705/Calculator-Using-JS.git",
+        link: "https://github.com/Junaid2705/Calculator-Using-JS.git",
+        linkLabel: "View Repository",
       },
     ],
   },
@@ -207,26 +210,26 @@ export const portfolioData = {
     subtitle: "A chronicle of my practical engineering journey, academic milestones, and technical development.",
     experience: [
       {
-        role: "Software Developer Trainee",
-        organization: "[Company Name] • Pune, India",
-        period: "2024 – Present",
-        badge: "Internship",
+        role: "Associate Software Engineer",
+        organization: "Micro Infoweb Pvt. Ltd. • Pune, India",
+        period: "Feb 2026 – Nov 2026",
+        badge: "Full-time",
         badgeClass: "badge-subtle",
         bullets: [
-          "Engineered modular backend services using Core Java and structured relational queries with MySQL.",
-          "Collaborated on building clean, mobile-responsive web interfaces utilizing semantic HTML, modern CSS, and JavaScript.",
-          "Conducted code reviews, debugged edge issues, and maintained structured documentation using Git and GitHub workflows.",
-        ],
+  "Worked on developing and updating web applications using Java, React, HTML, CSS, and Bootstrap.",
+  "Built responsive UI screens, handled form validations, and connected frontend pages with backend APIs.",
+  "Fixed UI and functional bugs, tested assigned modules, and coordinated with the team to complete tasks on time."
+],
       },
       {
-        role: "Full Stack & Computer Vision Projects",
-        organization: "Self-Directed Engineering",
-        period: "2023 – 2024",
-        badge: "Independent Engineering",
+        role: "Full Stack Java Development (Trainee / Course)",
+        organization: "Professional Training Program",
+        period: "Nov 2023 – Jul 2024 (8–9 Months)",
+        badge: "Training / Course",
         badgeClass: "badge-subtle",
         bullets: [
-          "Built deep learning video analysis pipelines using YOLOv8, handling custom data preprocessing and model inference.",
-          "Architected modular Java enterprise patterns (DAO, MVC, Service layers) with Maven dependencies and unit verification.",
+          "Completed an intensive 8–9 month hands-on training program covering Core & Advanced Java, Spring Boot, SQL, and frontend web technologies.",
+          "Built end-to-end full-stack projects focusing on RESTful services, database design, and responsive user interfaces.",
         ],
       },
     ],

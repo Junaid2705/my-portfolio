@@ -18,27 +18,35 @@ export default function App() {
 
   useEffect(() => {
     const sectionIds = portfolioData.navigation.map((n) => n.id);
+    let ticking = false;
 
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const offset = 120;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          const offset = 120;
 
-      // If reached the bottom of page, highlight the last section
-      if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 60) {
-        setActiveSection(sectionIds[sectionIds.length - 1]);
-        return;
-      }
-
-      for (const id of sectionIds) {
-        const el = document.getElementById(id);
-        if (el) {
-          const top = el.offsetTop - offset;
-          const height = el.offsetHeight;
-          if (scrollY >= top && scrollY < top + height) {
-            setActiveSection(id);
-            break;
+          // If reached the bottom of page, highlight the last section
+          if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 60) {
+            setActiveSection(sectionIds[sectionIds.length - 1]);
+            ticking = false;
+            return;
           }
-        }
+
+          for (const id of sectionIds) {
+            const el = document.getElementById(id);
+            if (el) {
+              const top = el.offsetTop - offset;
+              const height = el.offsetHeight;
+              if (scrollY >= top && scrollY < top + height) {
+                setActiveSection(id);
+                break;
+              }
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
